@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>NodeJS Assignment - Nuno Gervasio</title>
+
+    {{!-- START OF PASTED CODE --}}
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous">
+        </script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    {{!-- END OF PASTED CODE --}}
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="/site.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>NodeJS Assignment - Nuno Gervasio
+                        {{#if session.user}}
+                        <span class="pull-right">
+                            <a href="/logout" class="btn btn-primary">&nbsp;&nbsp;&nbsp;
+                                LogOut: {{session.user.username}}&nbsp;&nbsp;&nbsp;
+                            </a>
+                        </span>
+                        {{/if}}
+                        {{#unless session.user}}
+                        <span class="pull-right">
+                            <a class="btn btn-success" href="/login">&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;</a>
+                            <a class="btn btn-primary" href="/register">&nbsp;&nbsp;&nbsp;Register&nbsp;&nbsp;&nbsp;</a></span>
+                        {{/unless}}
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <div class="container">
+            <ul class="pull-left">
+                <li><a href="/"> Home </a></li>
+                <li><a href="/about"> About </a></li>
+            </ul>
+            {{#if session.user}}
+            <ul class="pull-right">
+                <li><a href="/employees"> All Employees </a></li>
+                <li><a href="/managers"> Managers </a></li>
+                <li><a href="/departments"> Departments </a></li>
+            </ul>
+            {{/if}}
+
+        </div>
+    </nav>
+
+    <div class="container">{{{body}}}</div>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>© 2017 - Nuno Gervasio</h2>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
